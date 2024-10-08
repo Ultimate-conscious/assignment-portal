@@ -10,6 +10,7 @@ export interface IAssignment extends Document {
     status: statusType;
 }
 
+//assuming username and task can uniquely identify an assignment
 const assignmentSchema: Schema = new Schema({
     username: { 
         type: String,
@@ -33,6 +34,10 @@ const assignmentSchema: Schema = new Schema({
     status: {
         type: String,
         required: true,
+        default: "pending",
         enum: ["accepted", "rejected", "pending"]
     }
 });
+
+
+export const assignmentModel = model<IAssignment>('Assignment', assignmentSchema);
