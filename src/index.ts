@@ -10,8 +10,10 @@ const PORT = parseInt(process.env.PORT || '');
 const app = express();
 connectDB();
 
+//for parsing the body of the request
 app.use(express.json());
 
+//segrating the routes for user and admin
 app.use('/user',userRouter);
 app.use('/admin',adminRouter);
 
