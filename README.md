@@ -4,6 +4,13 @@
 This project is a web application that allows users to register, log in, and submit assignments. Admins can manage assignments, including rejecting/accepting submissions. The application uses Express.js for the server, MongoDB for the database, and JWT for authentication and zod for input validation.
 
 
+## Improvements to be made
+ - Refactoring /register and /login routes, as they are same for user and admin 
+  can be changed to a function call so that DRY principle is not violated
+ - creating a better user(and admin) auth system so that they can login using google(passwordless)
+ - Currently using 3 tables admin, user & assignment, admin and user have the same schema so they could be
+  stored in one single table by adding a role property to their schema which will be an enum(of type admin | user);
+
 ## Project Structure
 ```bash
 .env
